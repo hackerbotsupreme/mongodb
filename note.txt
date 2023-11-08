@@ -1,0 +1,26 @@
+the firsst thing we will do is to create a root folder for our project  
+and 
+
+then the first thing we need is package.json ,so we will run  npm init -y 
+here -y means yes flag which tells to accept the default setup The "-y" flag in "npm init -y" is needed to skip the interactive setup process and automatically accept default configurations.
+
+then we need express , node , mongodb
+for express -> npm i  express -> this will download express for the project and also
+add expresss as dependency under the dependencies in the package.json file .
+for mongoose -> npm i  mongoose -> it will help connect node with mongodb 
+
+and now we will need a template engine for our project which is handlebars 
+for hba -> npm i hbs 
+
+so now we got all the packages 
+go check 
+  "dependencies": {
+    "express": "^4.18.2",
+    "hbs": "^4.2.0",
+    "mongoose": "^8.0.0"
+  }
+inside the package.json 
+
+
+
+
