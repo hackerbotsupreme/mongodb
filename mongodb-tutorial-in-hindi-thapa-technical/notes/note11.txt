@@ -1,0 +1,12 @@
+INTRO TO MONGOOSE 
+
+WHAT IS MONGOOSE?
+MONGOOSE is used to estblish connection between the node js or express js and mongodb 
+go to https://mongoosejs.com/
+
+for clear(visual with pictures ) understanding how it works, go to 
+https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/
+
+inshort , Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js.
+
+continue this on app.js of mongoose-video11

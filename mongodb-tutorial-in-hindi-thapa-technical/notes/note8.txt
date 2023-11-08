@@ -1,0 +1,133 @@
+remember : the only thing we have to make sure when we are using comapass is 
+to turm on the server in cmd using mongod
+and connect it then rest is the cake with compass .
+
+so in the cmd , 
+we will first start with the mongod command 
+then we have to look for this line 
+        {"t":{"$date":"2023-11-05T12:09:50.417+05:30"},"s":"I",  "c":"NETWORK",  "id":23016,   "ctx":"listener","msg":"Waiting for connections","attr":{"port":27017,"ssl":"off"}}
+which says 
+waiting for connections then 
+ad note tht all the things will be handleed on its own now and we can freely work with compass now 
+we need to open the mongodb compass 
+then new connection(mongodb://localhost:27017) and connect 
+
+and yeah we also have Documents
+
+Aggregations
+Schema
+Indexes
+Validation
+
+and the proof that its sucessful , 
+we will see -> these four databases by default in compass 
+            admin
+            aloke
+            config
+            local 
+
+now when we click on the aloke inside the compass , then click on  the folder 
+we wwill see, all the data 
+            _id
+            654705038ac192b43adb9279
+            name
+            "react js"
+            type
+            "front end"
+            _id
+            654707e7a6543eb7cbbc2076
+            name
+            "node js"
+            type
+            "back end"
+            _id
+            654708d8a6543eb7cbbc2077
+            age
+            "20"
+            _id
+            654708d8a6543eb7cbbc2078
+            favmovie
+            "hacker"
+            _id
+            654708d8a6543eb7cbbc2079
+            goal
+            "hacker"
+            _id
+            654708d8a6543eb7cbbc207a
+            phycho
+            "no"
+            _id
+            654708d8a6543eb7cbbc207b
+            badhabit
+            "no"
+            _id
+            654708d8a6543eb7cbbc207c
+            god
+            "yes"
+            _id
+            6547310ca6543eb7cbbc207d
+            name
+            "javascript"
+            type
+            "front end"
+            videos
+            150
+and at the very bottom we have shell (which is already started ) to play with thedocument 
+>_MONGOSH
+
+we can use it just like cmd , mongosh 
+like ...............
+            db.aloke.find()
+            use aloke
+            switched to db aloke
+            db.aloke.find()
+            {
+            _id: ObjectId("654705038ac192b43adb9279"),
+            name: 'react js',
+            type: 'front end'
+            }
+            {
+            _id: ObjectId("654707e7a6543eb7cbbc2076"),
+            name: 'node js',
+            type: 'back end'
+            }
+            {
+            _id: ObjectId("654708d8a6543eb7cbbc2077"),
+            age: '20'
+            }
+            {
+            _id: ObjectId("654708d8a6543eb7cbbc2078"),
+            favmovie: 'hacker'
+            }
+            {
+            _id: ObjectId("654708d8a6543eb7cbbc2079"),
+            goal: 'hacker'
+            }
+            {
+            _id: ObjectId("654708d8a6543eb7cbbc207a"),
+            phycho: 'no'
+            }
+            {
+            _id: ObjectId("654708d8a6543eb7cbbc207b"),
+            badhabit: 'no'
+            }
+            {
+            _id: ObjectId("654708d8a6543eb7cbbc207c"),
+            god: 'yes'
+            }
+            {
+            _id: ObjectId("6547310ca6543eb7cbbc207d"),
+            name: 'javascript',
+            type: 'front end',
+            videos: 150
+            }
+            show dbs
+            admin    40.00 KiB
+            aloke    72.00 KiB
+            config  108.00 KiB
+            local    72.00 KiB
+            show collections
+            aloke
+            aloke
+
+

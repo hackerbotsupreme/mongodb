@@ -1,0 +1,18 @@
+CRUD(CREATE,READ,UPDATE,DELETE) DELETE OPERATION 
+
+deleteMany() => db.collection_name.deleteMany(deletion_critetiria)
+
+1. Delete the filed with the type matches "full stack"
+
+forst , show collections 
+then , db.aloke.find().pretty()
+now , db.aloke.deleteMany({type:"full stack"})
+
+
+but how we delete ll of the documents ? 
+now , db.aloke.deleteMany({})
+- this deletes all of the documents .
+
+
+
+

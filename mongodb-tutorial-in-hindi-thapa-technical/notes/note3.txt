@@ -1,0 +1,97 @@
+create documnets , collections , database , project , cluster , organization 
+
+yeah  cmd is easier to understand , learn , apply than powershell when we are using mongodb .
+first  how  mongodb works  - documnets , collections , database , project , cluster , organization 
+
+Yes, it's correct. MongoDB uses a hierarchical structure that includes documents, collections, databases, projects, clusters, and organizations.
+In MongoDB, a document is the basic unit of data, similar to a row in a relational database. Documents are stored in collections, which are groupings of related documents.
+Collections are organized within a database, which is a container for collections and associated data. Databases can be considered as separate entities to logically group data.
+Projects in MongoDB often refer to the specific development or data organization tasks. They encompass creating, managing, and optimizing the database, collections, and documents for a particular application.
+A cluster in MongoDB is a group of servers that work together to provide high availability, scalability, and data redundancy. It's a fundamental component for managing large volumes of data and ensuring system resilience.
+Organizations typically refer to the higher-level entities that manage multiple projects and clusters. They are relevant when you're dealing with MongoDB Atlas, MongoDB's cloud-hosted database service.
+This structure is accurate and reflects MongoDB's data organization hierarchy, which is essential for effective data management and scalability.
+
+
+----------------------------------------------------------->
+
+steps -> 
+1. first we have to start the mongosh(mongoshell) - so that we cn work with mmongodb , create databases 
+2. 
+
+----------------------------------------------------------->
+first we need to understand how the use command works  , 
+
+use creates a new database but note that the database will not be displayed untill have atleast one database 
+
+
+test> show dbs
+admin   40.00 KiB
+config  72.00 KiB
+local   72.00 KiB
+test> use aloke
+switched to db aloke
+aloke> show dbs
+admin   40.00 KiB
+config  72.00 KiB
+local   72.00 KiB
+aloke>
+
+
+
+
+----------------------------------------------------------->
+now lets see how we can add data ? 
+
+first the db then database then insertOne
+
+        aloke> db.aloke.insertOne({name:"react js", type:"front end"})
+        {
+        acknowledged: true,
+        insertedId: ObjectId("654705038ac192b43adb9279")
+        }
+        aloke>
+
+and if we did notprovide the id then its gonna create the id by itself .
+and as now its have one document so if we do show dbs its gona show aloke database in them 
+
+        aloke> show dbs
+        admin    40.00 KiB
+        aloke    40.00 KiB
+        config  108.00 KiB
+        local    72.00 KiB
+        aloke>
+
+and  to find out your cureent database use db . 
+
+        aloke> db
+        aloke
+        aloke>
+    
+and to find out how many collection does this database havve 
+use --  show collections 
+
+        aloke>  show collections
+        aloke
+        aloke>
+
+now how many documnets do this collection have ?
+        aloke> db.aloke.find()
+        [
+        {
+            _id: ObjectId("654705038ac192b43adb9279"),
+            name: 'react js',
+            type: 'front end'
+        }
+        ]
+        aloke>
+and we have a simple method to format it , db.aloke.find().pretty()
+        aloke> db.aloke.find().pretty()
+        [
+        {
+            _id: ObjectId("654705038ac192b43adb9279"),
+            name: 'react js',
+            type: 'front end'
+        }
+        ]
+        aloke>
+        

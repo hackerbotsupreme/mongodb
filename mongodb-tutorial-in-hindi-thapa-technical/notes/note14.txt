@@ -1,0 +1,47 @@
+inserting many documents using mongoose .
+
+
+// create our document / insert the document 
+
+// adding multiple documents 
+const createDocument = async () => {
+  try {
+    const jsPlaylist = new Playlist({
+      name: "javascript",
+      ctype: "front end",
+      videos: 150,
+      author: "Thapa Technical",
+      active: true
+    })
+    // camelcase convention 
+    const mongodbPlaylist = new Playlist({
+      name: "mongodb js ",
+      ctype: "Database",
+      videos: 10,
+      author: "Thapa Technical",
+      active: true
+    })
+    const mongoosePlaylist = new Playlist({
+      name: "mongoose js ",
+      ctype: "Database",
+      videos: 5,
+      author: "Thapa Technical",
+      active: true
+    })
+    const expressPlaylist = new Playlist({
+      name: "Express js ",
+      ctype: "Backend",
+      videos: 20,
+      author: "Thapa Technical",
+      active: true
+    })
+    // so we created four documents , and its time to use insertMany 
+    // saving it 
+    // const result = await recentPlaylist.save();
+    const result = await Playlist.insertMany([expressPlaylist,mongoosePlaylist,mongodbPlaylist,jsPlaylist]);
+    // note insertMany takes an array so we ill pass all the four documents as array 
+    console.log(result)
+  } catch (err) {
+    console.log(err);
+  }
+}

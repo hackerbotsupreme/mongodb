@@ -1,0 +1,6 @@
+go to mongodb documentation (https://www.mongodb.com/docs/)
+
+
+come at https://www.mongodb.com/docs/manual/installation/ or type mongodb installation 
+and scroll down to the table of versions 
+to check what is the letest version /versions and which versions are supported or not supported

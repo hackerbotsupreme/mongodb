@@ -1,0 +1,59 @@
+MONGODB CRUD OPERATIONS - UPDATE QUERY 
+
+UpadateOne()=>db.collection_name.updateOne(<filter>,<update>)
+UpadateMany()=>db.collection_name.update(<filter>,<update>)
+
+
+1.Update the js type value to "full stack "
+        aloke> db.aloke.find().pretty()
+        aloke> db.aloke.updateOne({name:'javascript'},{$set:{type:"Full Stack"}})
+like .........
+in this example first we added/inserted one 
+        aloke> db.aloke.insertOne({name:"javascript" , type:"front end",videos : 150})
+        {
+        acknowledged: true,
+        insertedId: ObjectId("6547310ca6543eb7cbbc207d")
+        }
+then we updated that ,
+        aloke> db.aloke.updateOne({name:"javascript"},{$set:{type:"Full stack"}})
+        {
+        acknowledged: true,
+        insertedId: null,
+        matchedCount: 1,
+        modifiedCount: 1,
+        upsertedCount: 0
+        }
+        aloke> db.aloke.find()
+        [
+        {
+            _id: ObjectId("654705038ac192b43adb9279"),
+            name: 'react js',
+            type: 'front end'
+        },
+        {
+            _id: ObjectId("654707e7a6543eb7cbbc2076"),
+            name: 'node js',
+            type: 'back end'
+        },
+        { _id: ObjectId("654708d8a6543eb7cbbc2077"), age: '20' },
+        { _id: ObjectId("654708d8a6543eb7cbbc2078"), favmovie: 'hacker' },
+        { _id: ObjectId("654708d8a6543eb7cbbc2079"), goal: 'hacker' },
+        { _id: ObjectId("654708d8a6543eb7cbbc207a"), phycho: 'no' },
+        { _id: ObjectId("654708d8a6543eb7cbbc207b"), badhabit: 'no' },
+        { _id: ObjectId("654708d8a6543eb7cbbc207c"), god: 'yes' },
+        {
+            _id: ObjectId("6547310ca6543eb7cbbc207d"),
+            name: 'javascript',
+            type: 'Full stack',
+            videos: 150
+        }
+        ]
+        aloke>
+
+and what is the $set operator do  ? 
+the $set operator replaces the value  of a field with the specified value .
+
+now , update all the fields  with the type value =to "front end" and set the value of status to false .
+means update all allfields who has the type frontend 
+        aloke> db.aloke.updateMany({frontype:"front end"},{$set:{videos:20}})
+

@@ -1,0 +1,76 @@
+mongodb is a part of mern/mean stack .
+
+
+in the webdevelopment , 
+for frontend  we have html , css , js 
+for backend we have php, nodejs , python .
+
+so where does mongodb relies on , 
+it relies on the whenever we talk about the database , 
+
+
+maket has two very famous tech (both works/deals with database-similarity)
+1. php(sql)-mysql,postgre-rdbms (relational database management system) means works only with relational database 
+    -stors data in form of tables 
+    -in this case we need to know sql to query database 
+    -it has tables 
+    -it has rows
+    -it has columns
+    - limited number of fields 
+    -used in  Netflix, Instagram, Uber, Flipkart, Amazon, and Linkedin,
+2. mongodb(nosql) - non relational (document oriented)  database management system 
+    -stores data in forms of documents (in form of json which stores it in form of bson )
+    - it has array of objects or collection
+    --it has objects / documents = rows 
+    - it ahs fields 
+    - unlimted fields 
+    -mongodb uses bson to query database (json vs bson educba/mongodb)
+
+
+
+However, there are several issues that make JSON less than ideal for usage inside of a database.
+JSON only supports a limited number of basic data types. Most notably, JSON lacks support for dates and binary data.
+JSON objects and properties don’t have fixed length which makes traversal slower.
+In order to make MongoDB JSON-first, but still high performance and general purpose, BSON was invented to bridge the gap: a binary representation to store data in JSON format, optimized for speed, space, and efficiency. It’s not dissimilar from other binary interchange formats like Protocol Buffers, or Thrift, in terms of approach.
+
+
+
+
+which companies use sql and which ones use sql ?
+SQL or Structured Query Language is a standard query language that is used to manage RDBMS and perform a number of operations on the data available in that database. They contain a set of tables with data in rows as well as columns. It helps in analyzing the data in the database and update or delete them when required. Some of the major organizations that make use of SQL include:
+
+Microsoft
+NTT Data
+Cognizant
+Dell
+Accenture
+Stack Overflow
+NoSQL is non-SQL or non-relational DBMS which helps in providing a mechanism to store and retrieve data. Its design is simple and more flexible as compared to SQL. NoSQL databases are popular since they are easy to develop, function, and they perform well. A few of the companies that use NoSQL are:
+
+Amazon
+Adobe
+Capgemini
+SAP
+Qualcomm
+J.P. Morgan
+
+Why Amazon, Google, Netflix and Facebook Switched to NoSQL?
+Amazon, Google, Netflix, and Facebook use NoSQL databases because they need a fast, scalable solution that can handle large amounts of data. NoSQL databases can work efficiently with current unstructured data like social media, email, and documents. 
+Here are some reasons why these companies switched to NoSQL: 
+Scalability
+NoSQL was designed to be scaled horizontally, meaning you can add cheaper commodity servers as needed.
+Unstructured data
+NoSQL databases can work efficiently with current unstructured data like social media, email, and documents.
+Real-time data stream processing
+These websites are on top of their game in real-time feeds and machine learning.
+NoSQL isn't for everyone. Using NoSQL requires different skills than using a relational database, and some companies prefer to keep their data on their own servers.
+
+
+While relational databases are the most widely used application in big data, they are not suited for handling the exponential growth of real-time data. For example, the growth of information on the internet is a challenge for relational databases. Each day the world creates 2.5 quintillion bytes of data, with 90% of the data generated being unstructured. By 2020, it is estimated that over 40 Zettabytes of data will be created.
+To help overcome the challenges of this unstructured growth, many developers have been switching to “NoSQL” or “Not Only SQL” databases. NoSQL database systems are distributed, non-relational databases that also use non-SQL language and mechanisms in working with data. NoSQL databases can be found in companies like Amazon, Google, Netflix, and Facebook that are dependent on large volumes of data not suited to relational databases. These databases can work efficiently with current unstructured data like social media, email, and documents. NoSQL has a simple query language with high scalability and reliability.
+In the relational database or RDBMS, there are several other limitations besides the handling of unstructured data. For example, the scalability of relational databases includes distribution across multiple servers which can be challenging. There is also a catching layer issue where distributed cache can cause de-normalization. Additionally, there can be sharing problems with rebalancing issues. Not to mention that the cost of dealing with billions of rows in traditional databases can get expensive.
+On the other hand, with NoSQL databases, the workload can be automatically spread across multiple servers. Also, unlike RDBMS, NoSQL is highly distributable with clusters of servers which can hold the database. It has cached data in memory which is transparent to application developers and users. And, it allows easy scaling to adapt to the complexity of the cloud. With lots of open-source options, NoSQL technology enables developers to try the software before buying the product. Since a DBA is not needed to refactor SQL and create materialized views, this can also potentially reduce cost.
+While NoSQL is an expanding field that challenges many assumptions made by companies around maintaining legacy systems, is a credible movement that is solving real problems posed by big data.
+
+
+

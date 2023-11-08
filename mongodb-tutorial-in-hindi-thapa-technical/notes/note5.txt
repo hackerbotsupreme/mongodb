@@ -1,0 +1,65 @@
+MONGODB CRUD OPERATION 
+
+TOPIC -   db.name of the collection.find(query,projection )
+
+what we are gonna do ? 
+
+1. find all the result of the given collection . 
+        aloke> show dbs
+        admin   40.00 KiB
+        aloke   72.00 KiB
+        config  72.00 KiB
+        local   72.00 KiB
+        aloke> use aloke
+        already on db aloke
+        aloke> show xollections
+        MongoshInvalidInputError: [COMMON-10001] 'xollections' is not a valid argument for "show".
+        aloke> show collections
+        aloke
+        aloke>
+2. show the  result in pretty format ? 
+means  i am asking to show mw all the documents it contains . 
+        aloke> db.aloke.find().pretty()
+        [
+        {
+            _id: ObjectId("654705038ac192b43adb9279"),
+            name: 'react js',
+            type: 'front end'
+        },
+        {
+            _id: ObjectId("654707e7a6543eb7cbbc2076"),
+            name: 'node js',
+            type: 'back end'
+        },
+        { _id: ObjectId("654708d8a6543eb7cbbc2077"), age: '20' },
+        { _id: ObjectId("654708d8a6543eb7cbbc2078"), favmovie: 'hacker' },
+        { _id: ObjectId("654708d8a6543eb7cbbc2079"), goal: 'hacker' },
+        { _id: ObjectId("654708d8a6543eb7cbbc207a"), phycho: 'no' },
+        { _id: ObjectId("654708d8a6543eb7cbbc207b"), badhabit: 'no' },
+        { _id: ObjectId("654708d8a6543eb7cbbc207c"), god: 'yes' }
+        ]
+        aloke>
+3. get only mongodb data as a output  ? 
+blank space means no matching data 
+    aloke> db.aloke.find({name:"mongo db"}).pretty()
+
+    aloke>
+4. get only mogodb data as a output  with only name field .\
+means instead of getting all the field on query i want only one field .
+        aloke> db.aloke.find({name:"mongo db"},{name:1}).pretty()
+5. get only mongodb data as a without  _ID  field on it . 
+means i dont want to see the id field . 
+        aloke> db.aloke.find({name:"mongo db"},{id:0,name:1}).pretty()
+6. set the filter to active : true and get only the first field with the active :true value . 
+i only want to see the dfirst document eith active :true 
+        aloke> db.aloke.find({active:true}).pretty().limit(1)
+7. do the same as 6 question but with different method 
+it means what else method do we have to do the same without the limit .
+        aloke> db.aloke.findOne({active:true})
+8. do the same as 6 question but this time   ,get the 2nd field with active :true bu skippling the 1st field.
+i want to see the second document that matches active:true 
+         aloke> db.aloke.findOne({active:true}).pretty().limit(1).skip(1)
+
+
+
+
