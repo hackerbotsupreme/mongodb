@@ -1,0 +1,125 @@
+
+C:\Users\rekha>mongosh "mongodb+srv://cluster00.pmpfgsv.mongodb.net/" --apiVersion 1 --username rekhapramanik567984
+Enter password: ****************
+Current Mongosh Log ID: 6544b99fd20979df257da528
+Connecting to:          mongodb+srv://<credentials>@cluster00.pmpfgsv.mongodb.net/?appName=mongosh+2.0.2
+MongoServerSelectionError: B8270000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:C:\data\mci\f6ddc946c6a7920db4d670f4b6cd6139\tmp\boxednode\mongosh\node-v20.8.1\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1586:SSL alert number 80
+. It looks like this is a MongoDB Atlas cluster. Please ensure that your Network Access List allows connections from your IP.
+
+C:\Users\rekha>
+C:\Users\rekha>mongosh "mongodb+srv://cluster00.pmpfgsv.mongodb.net/" --apiVersion 1 --username rekhapramanik567984
+Enter password: ****************
+Current Mongosh Log ID: 6544ba5aef1010ec4ed2c1f0
+Connecting to:          mongodb+srv://<credentials>@cluster00.pmpfgsv.mongodb.net/?appName=mongosh+2.0.2
+Using MongoDB:          6.0.11 (API Version 1)
+Using Mongosh:          2.0.2
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+Atlas atlas-fmnr8s-shard-0 [primary] test> show dbs
+admin  336.00 KiB
+local    4.29 GiB
+Atlas atlas-fmnr8s-shard-0 [primary] test> show dbs
+shop   872.00 KiB
+admin  336.00 KiB
+local    4.29 GiB
+Atlas atlas-fmnr8s-shard-0 [primary] test> use shop
+switched to db shop
+Atlas atlas-fmnr8s-shard-0 [primary] shop> show collections
+products
+Atlas atlas-fmnr8s-shard-0 [primary] shop> db.products.find().limit(3)
+[
+  {
+    _id: ObjectId("64c23601e32f4a51b19b9262"),
+    name: 'Smartphone Model X',
+    company: '64c23350e32f4a51b19b9230',
+    price: 699,
+    colors: [ '#000000', '#ffffff', '#ff0000' ],
+    image: '/images/product-smartphone.png',
+    category: '64c2342de32f4a51b19b924e',
+    isFeatured: false
+  },
+  {
+    _id: ObjectId("64c23601e32f4a51b19b9263"),
+    name: 'Laptop Pro',
+    company: '64c23350e32f4a51b19b9231',
+    price: 1299,
+    colors: [ '#333333', '#cccccc', '#00ff00' ],
+    image: '/images/product-laptop.png',
+    category: '64c2342de32f4a51b19b924e',
+    isFeatured: true
+  },
+  {
+    _id: ObjectId("64c23601e32f4a51b19b9264"),
+    name: 'Smart Watch',
+    company: '64c23350e32f4a51b19b9232',
+    price: 249,
+    colors: [ '#000000', '#ff0000', '#00ff00' ],
+    image: '/images/product-smartwatch.png',
+    category: '64c2342de32f4a51b19b924e',
+    isFeatured: false
+
+Atlas atlas-fmnr8s-shard-0 [primary] shop>
+(To exit, press Ctrl+C again or Ctrl+D or type .exit)
+Atlas atlas-fmnr8s-shard-0 [primary] shop>
+
+C:\Users\rekha>mongosh
+Current Mongosh Log ID: 6544c5cf448132964f0864c2
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.0.2
+Using MongoDB:          6.0.4
+Using Mongosh:          2.0.2
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2023-11-03T14:27:12.786+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> show databases
+admin     40.00 KiB
+config    84.00 KiB
+local     72.00 KiB
+students  72.00 KiB
+test> mongoimport C:\Users\rekha\OneDrive\Desktop\mongoDB\2.Thapa Technical MongoDB Import Files\products.json -d shop  -c products
+Uncaught:
+SyntaxError: Missing semicolon. (1:11)
+
+> 1 | mongoimport C:\Users\rekha\OneDrive\Desktop\mongoDB\2.Thapa Technical MongoDB Import Files\products.json -d shop  -c products
+    |            ^
+  2 |
+
+test> mongoimport C:\Users\rekha\OneDrive\Desktop\mongoDB\2.Thapa Technical MongoDB Import Files\products.json -d shop  -c products C:\Users\rekha\OneDrive\Desktop\mongo\products.json
+Uncaught:
+SyntaxError: Missing semicolon. (1:11)
+
+> 1 | mongoimport C:\Users\rekha\OneDrive\Desktop\mongoDB\2.Thapa Technical MongoDB Import Files\products.json -d shop  -c products C:\Users\rekha\OneDrive\Desktop\mongo\products.json
+    |            ^
+  2 |
+
+test> mongoimport C:\Users\rekha\OneDrive\Desktop\mongo\products.json -d shop  -c products
+Uncaught:
+SyntaxError: Missing semicolon. (1:11)
+
+> 1 | mongoimport C:\Users\rekha\OneDrive\Desktop\mongo\products.json -d shop  -c products
+    |            ^
+  2 |
+
+test>
+(To exit, press Ctrl+C again or Ctrl+D or type .exit)
+test>
+
+C:\Users\rekha>Uncaught:
+'Uncaught:' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\rekha>SyntaxError: Missing semicolon. (1:11)
+'SyntaxError:' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\rekha>
+C:\Users\rekha> mongoimport C:\Users\rekha\OneDrive\Desktop\mongo\products.json -d shop  -c products
+2023-11-03T15:44:33.012+0530    connected to: mongodb://localhost/
+2023-11-03T15:44:33.739+0530    10355 document(s) imported successfully. 0 document(s) failed to import.
+
+C:\Users\rekha>

@@ -1,0 +1,106 @@
+mongobb terminologies : 
+we have a database 
+inside a data base we have a multille collection .
+of documents . 
+
+key features of mongodb -> 
+flexible schema design ->
+1. mongobb allows dynamic , schema-less data structures . 
+2. easily accomodate changing data requirements 
+
+2. scalability and performance -> 
+1. horizontal scaling large datasets and high traffic . 
+2. optimized and write  operations for fast performance . 
+
+3. document oriented strorage 
+1. data strored in json like bson documents 
+2. self contained units with rich data types  and nested arrays . 
+
+4. dynamic queries  : 
+1. rich query language with support for complex queries . 
+2. utilize indexed to speed up query execution . 
+
+5. aggregation framework 
+1. perform advanced data transformations and analysis . 
+2. process data multiple pipeline stages . 
+
+6. open source and community 
+1. moongodb  is oopen-souce with a vibrant community . 
+2. regular updates , improvements an support .
+
+
+
+how mongodb works ? 
+
+frontend - html , css , js  , react , vue , angular 
+backend - node js , , next js , express js , python , php 
+database - 
+
+combibed knowledge of all three makes a fullstack developer . 
+
+how things goes is when a user fills info then backend connects to the mongodb server 
+so that we can work with database its like backend server reuests that  a new user has filled the contact form you store it 
+in the database . 
+
+now mongodb server has storage engine , in mongodb we have storage engine called wiredtiger (it reada and write data from the database )
+which is responsible to vommunicate to the database .
+
+and yeah the storageengine converts the json data into bson data then stores it .
+
+so what is json vs bson ? 
+1. in mongodb , we write in json format only but behind the scene data  is stored in bson(binary json ) format 
+format , a binary representation of json .
+
+2. by utilizing bson , mongodb can achieve higher speed in read and write , reduced storage requirements , and improved
+data  manipulation capabilities , makingit well-suited for handling large and complex datasets while  maintaining 
+performence efficiency . 
+
+so why we work in json bcz its readable , wwhere bson is not readable.
+
+instlling mongodb 
+
+first of all what things we need to work on mongodb 
+
+1. a mongodb server 
+type mongosb community community server download
+https://www.mongodb.com/try/download/community 
+2. next is shell (mongodb shell)
+type - moongodb shell download  
+https://www.mongodb.com/try/download/shell
+
+why we need mongodb shell ? 
+basically i dont need the backend , i can directly use shell to connect directly to mongodb to connect to the database . 
+The MongoDB shell is an interactive JavaScript interface that allows you to interact with MongoDB instances through the command line. It can be used for: 
+Data manipulation
+Administrative operations such as maintenance of database instances
+Querying and updating data
+The MongoDB shell is similar to the mysql in MySQL, psql in PostgreSQL, and SQL*Plus in Oracle Database. 
+You can use the MongoDB shell to: 
+Connect to the database server
+Execute commands on it
+Perform administrative tasks
+Read, write, or manipulate data directly
+The MongoDB shell prompts you with suggested language when you can't remember a command or an operator. 
+3.is databse tools 
+type - mongodb database tools
+https://www.mongodb.com/try/download/database-tools
+
+why we need mongodb tools ? 
+basically importing and export the data . 
+MongoDB tools can make database administration tasks easier. Some MongoDB tools include: 
+mongoimport: Imports content from an Extended JSON, CSV, or TSV export file
+mongoexport: Produces a JSON or CSV export of data stored in a mongod instance
+Diagnostic Tools: Provides a quick overview of the status of a currently running mongod or mongos instance
+MongoDB is a NoSQL database that organizes data into documents and collections. It's scalable and can store different types of data, including unstructured data. Some benefits of MongoDB include: 
+Flexible schema
+Easy to access data
+Rarely requires joins or transactions
+Can perform complex querying
+Can simplify the development of complex or large-scale applications
+Available in any major public cloud
+Can nest JSON to store complex data objects
+
+
+
+
+

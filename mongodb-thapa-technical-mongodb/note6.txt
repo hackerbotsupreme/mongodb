@@ -1,0 +1,111 @@
+when to use Quotes and wen not to ?
+
+SPECIAL CHARECTERS 
+if a field name contains special sharecters or spaces ., or starts with a numerric digit , using quotes is neccesary . 
+
+RESERVED WORDS 
+if a fileld name is a reserved keyword in mongodb , use quotes to sistinguish it from the reserved keyword .
+and evry key:value pair is called field 
+            students> db.data.insertOne({'name':'vinod',age:29 , course name: 'cs'})
+            Uncaught:
+            SyntaxError: Unexpected token, expected "," (1:50)
+
+            > 1 | db.data.insertOne({'name':'vinod',age:29 , course name: 'cs'})
+                |                                                   ^
+            2 |
+            students> db.data.insertOne({'name':'vinod',age:29 , 'course name': 'cs'})
+            {
+            acknowledged: true,
+            insertedId: ObjectId("65437d8d8d98d1e78d35c04c")
+            }
+            students> db.data.find()
+            [
+            { _id: ObjectId("654375df8d98d1e78d35c047") },
+            { _id: ObjectId("6543761b8d98d1e78d35c048"), name: 'aloke', age: 20 },
+            { _id: ObjectId("654376b48d98d1e78d35c049"), name: 'aloke', age: 20 },
+            { _id: ObjectId("654376b48d98d1e78d35c04a"), name: 'rahul', age: 20 },
+            { _id: ObjectId("654376b48d98d1e78d35c04b"), name: 'arjun', age: 22 },
+            {
+                _id: ObjectId("65437d8d8d98d1e78d35c04c"),
+                name: 'vinod',
+                age: 29,
+                'course name': 'cs'
+            }
+            ]
+this conforms that  the data is addded after we used double quotes .
+
+
+.....................................................................................................................................
+
+
+ordered and unordered inserts  
+
+when executing bulk  write operations , " ordered " and "unordered" determine  the batch behaviour  . 
+
+ordered  inserts  : 
+    default behaviour is ordered , where mongodb stops on the first error .
+    db.<collection-name>.insertMany([doc1,doc2,....]);
+Unordered inserts :
+    when executing bulk write operations with unordered flag , MONGODB    processing after encounting an error . 
+    db.<collection-name>.insertMany([doc1,doc2,....],{ordered:false})
+
+        students> db.data.insertMany([  {'name':"aloke",age:20},{'name':"rahul",age:20},{ _id: ObjectId("654376b48d98d1e78d35c04b"),'name':"arjun",age:22} ])
+        Uncaught:
+        MongoBulkWriteError: E11000 duplicate key error collection: students.data index: _id_ dup key: { _id: ObjectId('654376b48d98d1e78d35c04b') }
+        Result: BulkWriteResult {
+        insertedCount: 2,
+        matchedCount: 0,
+        modifiedCount: 0,
+        deletedCount: 0,
+        upsertedCount: 0,
+        upsertedIds: {},
+        insertedIds: {
+            '0': ObjectId("654380f28d98d1e78d35c04d"),
+            '1': ObjectId("654380f28d98d1e78d35c04e"),
+            '2': ObjectId("654376b48d98d1e78d35c04b")
+        }
+        }
+        Write Errors: [
+        WriteError {
+            err: {
+            index: 2,
+            code: 11000,
+            errmsg: "E11000 duplicate key error collection: students.data index: _id_ dup key: { _id: ObjectId('654376b48d98d1e78d35c04b') }",
+            errInfo: undefined,
+            op: {
+                _id: ObjectId("654376b48d98d1e78d35c04b"),
+                name: 'arjun',
+                age: 22
+            }
+            }
+        }
+        ]
+        students>
+here in the above code , we copied the id of another previously entered data then we retrieed another data 
+with teh same id then its shoeing us write errors where its saying that we have errors at the document of index 2 
+means in the 3rd document and its saying duplicate key error collection as the indexing statrts from number 0 . 
+
+so on this case nothing is going to be inserted . 
+
+and remember in the process of insertion will continue untill an error is encounterd and that is why its showing 
+insertedCount: 2,  which means two documents are inserted before the error . 
+
+and there is also ore like op , errrInfo , errmsg  so here the op means operation it tells us that in which operation it did face the error 
+, errmsg : why the error has happened .
+errrInfo is what the error is about . 
+
+
+and this is the of finding an error . 
+
+and note that the 
+insertion of documents into the databases are ordered by default . and in this tyoe of insertion the problem is 
+if an error is occured then it will not insert the rest of the documents after the error document .
+
+
+so if we want that if we are adding 100 document then if 2 are wrong then 98 must get inserted then  
+we will use ordered inserts 
+
+its looks like ,
+    db.data.insertMany([  {'name':"aloke",age:20},{'name':"rahul",age:20},{ _id: ObjectId("654376b48d98d1e78d35c04b"),'name':"arjun",age:22} ,{'name':"deb",age:28} ,{ordered:false}])
+
+

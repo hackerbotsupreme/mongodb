@@ -1,0 +1,93 @@
+CASE SENSITIVITY IN MONGODB 
+
+1. Collection names are case-sensitive . 
+2. field names within documents are also documents are also case -sensitive . 
+
+look at this one in uppercase and one is in lowercase 
+db.Product.insertOne({name:"thapa",age:30})
+db.product.insertOne({name:"thapa",age:30})
+
+        students> show collections
+        data
+        students> db.data.find().limit(2)
+        [
+        { _id: ObjectId("654375df8d98d1e78d35c047") },
+        { _id: ObjectId("6543761b8d98d1e78d35c048"), name: 'aloke', age: 20 }
+        ]
+        students> db.Data.find().limit(2)
+
+        students>
+
+so here is the example , 
+
+        students> show collections
+        data
+        students> db.data.find().limit(2)
+        [
+        { _id: ObjectId("654375df8d98d1e78d35c047") },
+        { _id: ObjectId("6543761b8d98d1e78d35c048"), name: 'aloke', age: 20 }
+        ]
+        students> db.Data.find().limit(2)
+
+        students>
+on the first one everything is right an when i write Data instead of data  then we get no data 
+which means there is no collection named Data .
+hance we see that mongodb is case sensitive so 
+mke sure you write correctly  .
+
+
+..............................................................................................................
+
+Read operations in mongodb 
+
+READING DOCUMENTS IN MONGODB 
+COMPARISON  OPERATORS 
+LOGICAL OPERATORS  
+CURSORS IN MONGODB 
+ELEMENTS OPRATORS 
+
+
+FINDING DOCEMENTS ONO MONGODB 
+find() -> dn.find() method ->find result in multiple documents 
+    db.collection_name.find({key:value})
+findOne() -> find  first result in multiple documents   
+    db.collection_name.findOne({key:value})
+in poershell , 
+        students> db.data.find()
+        [
+        { _id: ObjectId("654375df8d98d1e78d35c047") },
+        { _id: ObjectId("6543761b8d98d1e78d35c048"), name: 'aloke', age: 20 },
+        { _id: ObjectId("654376b48d98d1e78d35c049"), name: 'aloke', age: 20 },
+        { _id: ObjectId("654376b48d98d1e78d35c04a"), name: 'rahul', age: 20 },
+        { _id: ObjectId("654376b48d98d1e78d35c04b"), name: 'arjun', age: 22 },
+        {
+            _id: ObjectId("65437d8d8d98d1e78d35c04c"),
+            name: 'vinod',
+            age: 29,
+            'course name': 'cs'
+        },
+        { _id: ObjectId("654380f28d98d1e78d35c04d"), name: 'aloke', age: 20 },
+        { _id: ObjectId("654380f28d98d1e78d35c04e"), name: 'rahul', age: 20 },
+        { _id: ObjectId("6543856e8d98d1e78d35c04f"), name: 'aloke', age: 20 },
+        { _id: ObjectId("6543856e8d98d1e78d35c050"), name: 'rahul', age: 20 },
+        { _id: ObjectId("654385b08d98d1e78d35c052"), name: 'aloke', age: 20 },
+        { _id: ObjectId("654385b08d98d1e78d35c053"), name: 'rahul', age: 20 }
+        ]
+now let suppose we need to find which documents have the name "aloke" 
+        students> db.data.find({'name':'aloke'})
+        [
+        { _id: ObjectId("6543761b8d98d1e78d35c048"), name: 'aloke', age: 20 },
+        { _id: ObjectId("654376b48d98d1e78d35c049"), name: 'aloke', age: 20 },
+        { _id: ObjectId("654380f28d98d1e78d35c04d"), name: 'aloke', age: 20 },
+        { _id: ObjectId("6543856e8d98d1e78d35c04f"), name: 'aloke', age: 20 },
+        { _id: ObjectId("654385b08d98d1e78d35c052"), name: 'aloke', age: 20 }
+        ]
+        students>
+now insted of find if i write findOne then we get only one document which have name aloke , 
+        students>  db.data.findOne({'name':'aloke'})
+        { _id: ObjectId("6543761b8d98d1e78d35c048"), name: 'aloke', age: 20 }
+        students>
+
+
+
+

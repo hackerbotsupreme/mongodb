@@ -1,0 +1,171 @@
+C:\Users\rekha> mongosh --version
+2.0.2
+
+C:\Users\rekha>mongod --version
+
+PS C:\Users\rekha> mongod --version
+db version v7.0.2
+Build Info: {
+    "version": "7.0.2",
+    "gitVersion": "02b3c655e1302209ef046da6ba3ef6749dd0b62a",
+    "modules": [],
+    "allocator": "tcmalloc",
+    "environment": {
+        "distmod": "windows",
+        "distarch": "x86_64",
+        "target_arch": "x86_64"
+    }
+}
+
+C:\Users\rekha>
+...............................................................................
+
+now  what mongodb does is it starts mongodb server . 
+remeber you cant connect to the database untill you sstart the server . 
+no server , no database , simple .
+in the previous servers we needed to start and run the server all the time in a different shell ,
+but in the latest version that server runs auomatically in the background you can open task manager(ctrl + shift+esc) and  verify it . 
+
+so we dont have to start the server by ourselves , we need to make sure the mongoosh shell is installed so that we can 
+connect to  the database , perform queries ,documents..etc. 
+type mongosh in terminal -> 
+
+            PS C:\Users\rekha> mongosh
+            Current Mongosh Log ID: 654308c5e2913325ed2e7493
+            Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.0.2
+            Using MongoDB:          6.0.4
+            Using Mongosh:          2.0.2
+
+            For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+
+            To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+            You can opt-out by running the disableTelemetry() command.
+
+            ------
+            The server generated these startup warnings when booting
+            2023-11-01T22:07:13.243+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+            ------
+
+then  type  -> 
+show dbs 
+its saying show databases 
+it will show 
+        admin   40.00 KiB
+        config  12.00 KiB
+        local   40.00 KiB
+
+...................................................................................
+
+
+Managing databasess  in mongodb 
+
+ok first how the flow goes is database have collections and collections have documents
+
+so there are two main   things ,
+creating / deleting Databases 
+creating / deleting collections 
+
+
+Managing databases and collections 
+command -> 
+show dbs 
+use <database-name> -> command to create database 
+db.dropDatabase(); -> command to delete database 
+
+for collections, command ->
+show collections ;
+db.createCollection('<collection-name>');-> command to create collections
+db.<collection-name>.drop(); -> command to delete collections
+
+
+.......................................................................
+
+
+open powershell ,
+tostart working in mongodb , type mongosh
+        PS C:\Users\rekha> mongosh
+        Current Mongosh Log ID: 65436acc8d98d1e78d35c046
+        Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.0.2
+        Using MongoDB:          6.0.4
+        Using Mongosh:          2.0.2
+
+        For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+        ------
+        The server generated these startup warnings when booting
+        2023-11-01T22:07:13.243+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+        ------
+then cls to lcean it and show dbs or show databases  to see the databases 
+
+and note that after you run the command mongosh the directory will look like - 
+test > 
+    test> show dbs
+    admin   40.00 KiB
+    config  72.00 KiB
+    local   40.00 KiB
+    test>
+these three are default databases . dont touch them . 
+
+and now we need to create a new database . how will we do it  ? 
+type use students , this will createa  students directory and will automatically go inside it . 
+
+also , we can do use admin to go to the admin . 
+look at this  , 
+
+
+test> show databases
+admin   40.00 KiB
+config  72.00 KiB
+local   40.00 KiB
+test> use students
+switched to db students
+students> show dbs
+admin   40.00 KiB
+config  96.00 KiB
+local   40.00 KiB
+students> use admin
+switched to db admin
+admin>
+
+ok now why if  i created a new database using use students then why its not shoing when i do show dbs ? 
+its becuse databases officially do not show them untill we have at least one collection .
+so note that you wont see a database listed in the output of the show dbs command untill that database contains at least one collection 
+with data in it .
+
+and to see the collections we use  show collections command .
+and to add data we do someething like this  ,
+
+        admin> use students
+        switched to db students
+        students> db.createCollection("data")
+        { ok: 1 }
+        students>
+now if we do show collections 
+        students> show collections
+        data
+        students>
+and on show dbs 
+        students> show dbs
+        admin      40.00 KiB
+        config    108.00 KiB
+        local      40.00 KiB
+        students    8.00 KiB
+        students>
+we can see the collection student ,
+and now to delete it ,
+        students> db.data.drop()
+        true
+        students>
+and on show collections
+        students> show collections
+
+        students>
+        students> db.dropDatabase()
+        { ok: 1, dropped: 'students' }
+        students> show dbs
+        admin    40.00 KiB
+        config  108.00 KiB
+        local    40.00 KiB
+        students>
+

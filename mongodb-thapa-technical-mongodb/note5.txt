@@ -1,0 +1,63 @@
+INSERT OPERATION IN MONGODB 
+
+INSERTING DOCUMENTS IN MONGODB 
+when to use quotes and when not to 
+orderes and unordered inserts 
+case sensitivity in mongodb 
+        db..<collection-name>.insertOne({
+            field : value1,
+            field : value2,
+            ...
+        });
+if we need to insert one document inside the collection then we use .insertOne.
+({}) -> tjis represents obkect literals .
+and lastly they are in form of key value pairs .
+
+and to insert multiple documents , 
+    db.<collection-name>.insertMany([
+        {field:value, field2: value2,....}
+        {field:value, field2: value2,....}
+        //.....
+    ])
+here we will use ([
+        {...}
+        {...}
+    ])
+we are using array of an object .
+
+        students> use students
+        already on db students
+        students> db.data.insertOne({})
+        {
+        acknowledged: true,
+        insertedId: ObjectId("654375df8d98d1e78d35c047")
+        }
+        students>  db.data.insertOne({'name':"aloke",age:20})
+        {
+        acknowledged: true,
+        insertedId: ObjectId("6543761b8d98d1e78d35c048")
+        }
+        students> db.data.insertMany([  {'name':"aloke",age:20},{'name':"rahul",age:20},{'name':"arjun",age:22} ])
+        {
+        acknowledged: true,
+        insertedIds: {
+            '0': ObjectId("654376b48d98d1e78d35c049"),
+            '1': ObjectId("654376b48d98d1e78d35c04a"),
+            '2': ObjectId("654376b48d98d1e78d35c04b")
+        }
+        }
+        students> db.data.find()
+        [
+        { _id: ObjectId("654375df8d98d1e78d35c047") },
+        { _id: ObjectId("6543761b8d98d1e78d35c048"), name: 'aloke', age: 20 },
+        { _id: ObjectId("654376b48d98d1e78d35c049"), name: 'aloke', age: 20 },
+        { _id: ObjectId("654376b48d98d1e78d35c04a"), name: 'rahul', age: 20 },
+        { _id: ObjectId("654376b48d98d1e78d35c04b"), name: 'arjun', age: 22 }
+        ]
+        students>
+
+remember {} this represents a document .
+
+
+
+

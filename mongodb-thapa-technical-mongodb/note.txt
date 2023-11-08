@@ -1,0 +1,45 @@
+C:\Users\rekha\OneDrive\Desktop\mongoDB\2.Thapa Technical MongoDB Import Files
+course topics -> 
+1. basics 
+    intro 
+    nosql vs sql 
+    managing db and collections 
+    advanced crud operations 
+    comparison operators 
+    cursors in mongodb
+    lofical operators 
+    sexpr and elements operator 
+    projeection and relationship 
+    embedded documents 
+
+2. advanced 
+    intro of indexes 
+    creating and managing index 
+    understanding aggregation framework 
+    intro to aggregation 
+    basic aggregation operations 
+    combining aggregation stages 
+    aggregation operators and expressions 
+    pipeline stages 
+    match , project , group , sort , limit , unwind , filter , skip etc . 
+
+
+3.project 
+    project1
+        working with mongodb nodejs driver (how to perform crud in real life project ) 
+    project2
+        working with mongodb and node js 
+
+
+and lastly mongodb atlas and mongodb compass 
+mongodb atlas - mongo db company created mongodb atlas to provide a database service , wherre we can host our database 
+completely free and also we can accesss the data of the datbase from anywhere .
+
+but forst we are gonna host on local server first then 
+we will use terminal to connect to mongodb . 
+
+
+the point is to learn and understand how everything works on the localhost 
+then we are gonna host using atlas and compass .
+
+

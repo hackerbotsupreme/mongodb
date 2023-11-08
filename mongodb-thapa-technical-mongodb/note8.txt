@@ -1,0 +1,73 @@
+C:\Users\rekha\OneDrive\Desktop\mongoDB\2.Thapa Technical MongoDB Import Files
+IMPORT JSON IN MONGODB 
+
+import means the required data is at somewhere else and we need that to import .  
+
+when it is not inside an arry ,
+    mongoimport jsonfile.json  -d database_name --c collection_name 
+and when it is inside an array , 
+    mongoimport products.json -d shop -c products 
+and if it is an array of an object , 
+    mongoimport products.json -c products --jsonArray 
+
+here , --jsonArray accepts the import of data expressed with multiplr mongodb documents  within a single json array. 
+
+
+and to play with thhe  files you have to go outside the file and then use mongoimport ,
+
+note : mnogoimport and mongoexport are command line utilities that are part of the mongodb database tools .
+thesse tools are used importing data into mongodb (using mongoimport) and exporting sdata  from mongoDB (using mongoexport ).
+
+and remember that the some of the json files are in the form of array of an object .
+
+note that : the mongoimport command does not work on mongo shrll , 
+you need to run it on usual command prompt . 
+
+it looks like , 
+in the coe below  filename , database , collection - this is the way of our importing document .
+    mongoimport C:\Users\rekha\OneDrive\Desktop\mongoDB\products.json -d shop -c products
+
+note: when you are importing the file size must be smaller or upto 16mb. its the limit .
+
+and to export we use , 
+    mongoexport -d  shpp -c products  -o path-of-the-file 
+-o means out the file . 
+
+
+
+then we can go inside our shell , by typing mongosh 
+and remember inside the shell it shows test> like this . 
+
+
+then do the following , 
+show collections 
+db.products.find()-> product is the name of a colleciion  .
+    remember that the when you do find then it shows maximum of 21 documents so type it for more details 
+    on thw nect it it will return the next 21 databases 
+
+comparison  operators -> 
+        $eq -> equal to 
+        $ne -> not equal to 
+        $gt -> greater than 
+        $gte -> greater than  equal to 
+        $lte -> less than less than equal to 
+        $in -> in  operator 
+        $nin -> not in operator 
+
+syntax -> 
+        db.collectionName.find({'fieldname':{$operator : value }})
+        db.products.find({'price':{$eq : 699}})
+        db.category.find({price:{$in:[249,129,39]}})
+remember to use {} inside the () as they are treated as an object . 
+
+for the count , 
+db.products.find({'price':{$gte:885}}).count()
+db.products.find({'price':{$lte:885}}).count()
+db.products.find({'price':{$in:[245,324,3452]}}).count()-> it says this priced profucts please come in 
+
+
+
+
+
+
+

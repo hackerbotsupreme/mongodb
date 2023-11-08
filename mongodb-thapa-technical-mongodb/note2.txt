@@ -1,0 +1,53 @@
+what is mongodb ? 
+1. mongodb is an opensource, document-oriented nosql database management system .
+database management system - 
+MongoDB,MySQL,Oracle,PostgreSQL,Microsoft SQL Server,IBM Db2,
+Amazon RDS,Microsoft Access,Cassandra,,FileMaker,SQLite
+
+
+but what is document-oriented nosql 
+now focus on - document-oriented nosql - 
+What is a Document Database?
+A document database (also known as a document-oriented database or a document store) is a database that stores information in documents. 
+means 
+it stores its databases as documnets in format of json files.
+
+
+now why mongodb?
+Document databases offer a variety of advantages, including:
+    An intuitive data model that is fast and easy for developers to work with.
+    A flexible schema that allows for the data model to evolve as application needs change.
+    The ability to horizontally scale out.
+
+it is designed for flexibility, scalability , and performance in handling unstructured or semi-structured data. 
+
+more about mongodb : 
+creted by 10gen . 
+
+difference between sql and mongodb
+sql - 
+1.sql databases are relational databases( a type of database that stores and provides access to data in form of table ) , 
+they use structured tables to store data . 
+2. suitable for applications with well defined schemas(predefination structure of data ) and fixed data structures .
+3. e-commerce platforms , hr managements etc.
+4,. exmaples : mysql ,postsql , oracle etc.
+
+
+
+mongodb(nosql) - 
+1.designed for flexibility , scalability , and performance in handling unstructured or semi-structured data 
+2. nosql database are non-relational database .
+3. they provie flexibility in data storage , allowing varied data types and structures . 
+4. ideal for applications with dynamic  or evolving data models .like facebook , instagram , 
+5. cms , scial media platforms , gmaing etc .
+4. mongodb , casendra etc.
+
+sql and nosql explained in hindi -> 
+
+ watch the mongodb 5 hours video from 18:18  
+explained properly with example 
+
+
+
+
+
